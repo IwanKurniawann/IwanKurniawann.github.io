@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- [REVISI KEAMANAN] Menambahkan Content Security Policy (CSP) via meta tag -->
-    <!-- Ini adalah lapisan pertahanan pertama. Untuk keamanan maksimal, CSP harus diatur di level server. -->
+    <!-- [REVISI KEAMANAN] Memperbarui Content Security Policy (CSP) -->
+    <!-- Aturan 'unsafe-inline' pada style-src ditambahkan agar Tailwind CDN dapat berfungsi. -->
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
                    script-src 'self' https://unpkg.com https://cdn.tailwindcss.com; 
-                   style-src 'self' https://fonts.googleapis.com;
+                   style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
                    font-src https://fonts.gstatic.com; 
                    img-src 'self' https://placehold.co https://iwankurniawann.github.io; 
                    object-src 'none'; 
@@ -42,7 +42,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <!-- [PERBAIKAN] Memperbaiki atribut 'xintegrity' menjadi 'integrity' -->
     <script src="https://unpkg.com/lucide@latest" 
             xintegrity="sha384-6gqKqfFv93ZCj3z3h0VqBC85yDI0hJjbu5103rHkuOU1CnsfAPWDwfX2B4okdiuM" 
             crossorigin="anonymous"></script>
