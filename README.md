@@ -1,2 +1,2 @@
-# iwankurniawan.github.io
+# iwankurniawan
 Personal Web
