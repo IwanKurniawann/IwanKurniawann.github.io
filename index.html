@@ -40,6 +40,10 @@
         .nav-link.active { color: #2563eb; font-weight: 700; }
         .section-fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .section-fade-in.visible { opacity: 1; transform: translateY(0); }
+        /* Style untuk transisi slider yang mulus */
+        .testimonial-slider-track {
+            transition: transform 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="text-slate-700">
@@ -60,6 +64,7 @@
                             <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Kompetensi</a>
                             <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Proyek</a>
                             <a href="#blog" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Blog</a>
+                            <a href="#testimonials" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Testimoni</a>
                             <a href="#contact" class="nav-link bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-all">Hubungi Saya</a>
                         </div>
                     </div>
@@ -295,19 +300,72 @@
 
              <!-- Testimonials Section -->
              <section id="testimonials" class="py-12 section-fade-in" aria-labelledby="testimonials-heading">
-                 <h2 id="testimonials-heading" class="text-3xl font-bold text-slate-900 text-center">Apa Kata Mereka</h2>
-                 <div class="mt-2 w-16 h-1 bg-blue-600 rounded mx-auto"></div>
-                 <div class="mt-12 max-w-3xl mx-auto text-center">
-                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
-                        <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
-                        <blockquote class="mt-4 text-xl text-slate-700 italic">
-                            "Pak Iwan memiliki kombinasi langka: presisi tinggi di lapangan dan kemampuan analisis data yang kuat. Ia tidak hanya memberi kami data yang akurat, tetapi juga rekomendasi tajam yang lahir dari interpretasi data tersebut. Sangat membantu dalam pengambilan keputusan K3 yang krusial."
-                        </blockquote>
-                        <cite class="block mt-6 not-italic font-bold text-slate-800">- Mr. Rendy Edvan</cite>
-                        <p class="text-sm text-slate-500">HSE Maneger PT Pertamina Hulu Energy</p>
+                <h2 id="testimonials-heading" class="text-3xl font-bold text-slate-900 text-center">Apa Kata Mereka</h2>
+                <div class="mt-2 w-16 h-1 bg-blue-600 rounded mx-auto"></div>
+                
+                <!-- Kontainer Testimoni Slider -->
+                <div class="relative w-full max-w-2xl mx-auto overflow-hidden mt-12">
+                    <!-- Track yang berisi semua kartu testimoni -->
+                    <div id="testimonial-track" class="flex testimonial-slider-track">
+
+                        <!-- Testimoni 1 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-8 md:p-10 h-full flex flex-col justify-center">
+                                <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
+                                <blockquote class="mt-4 text-lg text-slate-700 italic leading-relaxed">
+                                    "Pak Iwan memiliki kombinasi langka: presisi tinggi di lapangan dan kemampuan analisis data yang kuat. Ia tidak hanya memberi kami data yang akurat, tetapi juga rekomendasi tajam yang lahir dari interpretasi data tersebut. Sangat membantu dalam pengambilan keputusan K3 yang krusial."
+                                </blockquote>
+                                <div class="mt-8 text-center">
+                                    <cite class="block not-italic font-bold text-slate-800">Mr. Rendy Edvan</cite>
+                                    <p class="text-sm text-slate-500">HSE Manager, PT Pertamina Hulu Energi</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimoni 2 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                             <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-8 md:p-10 h-full flex flex-col justify-center">
+                                <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
+                                <blockquote class="mt-4 text-lg text-slate-700 italic leading-relaxed">
+                                    "Laporan dari Pak Iwan lebih dari sekadar angka; itu adalah peta jalan untuk perbaikan. Analisis trennya membantu kami mengidentifikasi potensi bahaya sebelum menjadi insiden, yang secara langsung meningkatkan efisiensi dan keselamatan di area produksi."
+                                </blockquote>
+                                <div class="mt-8 text-center">
+                                    <cite class="block not-italic font-bold text-slate-800">Ibu Sarah Wijayanti</cite>
+                                    <p class="text-sm text-slate-500">Production Supervisor, PT Petrokimia Gresik</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimoni 3 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                             <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-8 md:p-10 h-full flex flex-col justify-center">
+                                <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
+                                <blockquote class="mt-4 text-lg text-slate-700 italic leading-relaxed">
+                                    "Kemampuan Pak Iwan dalam menerjemahkan data lapangan yang kompleks menjadi insight strategis sangat berharga. Berkat analisisnya, kami dapat mengalokasikan sumber daya K3 dengan lebih efektif dan membuat keputusan yang didukung oleh data yang solid."
+                                </blockquote>
+                                <div class="mt-8 text-center">
+                                    <cite class="block not-italic font-bold text-slate-800">Mr. Budi Santoso</cite>
+                                    <p class="text-sm text-slate-500">Operations Director, PT Bukit Asam Tbk</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                 </div>
-             </section>
+
+                    <!-- Navigasi (Tombol panah) -->
+                    <button id="prevBtn" class="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 bg-white/60 hover:bg-white p-2 rounded-full shadow-md hover:shadow-lg transition-all z-10">
+                        <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+                    </button>
+                     <button id="nextBtn" class="absolute top-1/2 -right-4 md:-right-12 -translate-y-1/2 bg-white/60 hover:bg-white p-2 rounded-full shadow-md hover:shadow-lg transition-all z-10">
+                        <i data-lucide="chevron-right" class="w-6 h-6 text-slate-700"></i>
+                    </button>
+                </div>
+                
+                <!-- Indikator (titik-titik) -->
+                <div id="dots-container" class="flex justify-center mt-8 space-x-2">
+                    <!-- Dots akan dibuat oleh JavaScript -->
+                </div>
+            </section>
 
              <!-- Contact Section -->
             <section id="contact" class="py-16 md:py-24 text-center bg-slate-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 section-fade-in" aria-labelledby="contact-heading">
@@ -338,8 +396,11 @@
     </footer>
 
     <script>
-        lucide.createIcons();
         document.addEventListener('DOMContentLoaded', () => {
+            // Perbaikan: Panggil lucide.createIcons() setelah DOM siap.
+            lucide.createIcons();
+
+            // --- Script untuk Navbar & Animasi Scroll ---
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -358,6 +419,11 @@
                         currentSection = section.getAttribute('id');
                     }
                 });
+                // Tambahkan link testimoni ke navigasi aktif
+                if (!currentSection && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    currentSection = 'contact';
+                }
+
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if(link.getAttribute('href') === `#${currentSection}`) {
@@ -377,6 +443,92 @@
             document.querySelectorAll('.section-fade-in').forEach(section => {
                 observer.observe(section);
             });
+
+            // --- Script untuk Testimonial Slider ---
+            const track = document.getElementById('testimonial-track');
+            if (track) {
+                const slides = Array.from(track.children);
+                const nextButton = document.getElementById('nextBtn');
+                const prevButton = document.getElementById('prevBtn');
+                const dotsContainer = document.getElementById('dots-container');
+
+                if (slides.length > 0) {
+                    let slideWidth = slides[0].getBoundingClientRect().width;
+                
+                    // Buat dots navigasi
+                    slides.forEach((_, index) => {
+                        const button = document.createElement('button');
+                        button.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+                        button.classList.add('dot', 'w-3', 'h-3', 'bg-slate-300', 'rounded-full', 'transition-colors', 'duration-300');
+                        if (index === 0) {
+                            button.classList.remove('bg-slate-300');
+                            button.classList.add('bg-blue-600');
+                        }
+                        button.addEventListener('click', () => {
+                            moveToSlide(index);
+                            resetInterval();
+                        });
+                        dotsContainer.appendChild(button);
+                    });
+                    const dots = Array.from(dotsContainer.children);
+
+                    let currentIndex = 0;
+
+                    // Fungsi untuk pindah slide
+                    const moveToSlide = (targetIndex) => {
+                        track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+                        
+                        // Update dot yang aktif
+                        dots.forEach((dot, index) => {
+                            dot.classList.toggle('bg-blue-600', index === targetIndex);
+                            dot.classList.toggle('bg-slate-300', index !== targetIndex);
+                        });
+
+                        currentIndex = targetIndex;
+                        lucide.createIcons(); // Re-render icons if needed
+                    };
+                    
+                    // Event listener untuk tombol
+                    prevButton.addEventListener('click', e => {
+                        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        moveToSlide(prevIndex);
+                        resetInterval();
+                    });
+
+                    nextButton.addEventListener('click', e => {
+                        const nextIndex = (currentIndex + 1) % slides.length;
+                        moveToSlide(nextIndex);
+                        resetInterval();
+                    });
+
+                    // Sliding otomatis
+                    let slideInterval;
+                    const startInterval = () => {
+                        slideInterval = setInterval(() => {
+                            const nextIndex = (currentIndex + 1) % slides.length;
+                            moveToSlide(nextIndex);
+                        }, 7000); // Ganti slide setiap 5 detik
+                    };
+                    
+                    const resetInterval = () => {
+                        clearInterval(slideInterval);
+                        startInterval();
+                    };
+
+                    // Mulai slider otomatis
+                    startInterval();
+                    
+                    // Responsive: atur ulang lebar slide jika ukuran window berubah
+                    window.addEventListener('resize', () => {
+                        slideWidth = slides[0].getBoundingClientRect().width;
+                        track.style.transition = 'none'; // nonaktifkan transisi saat resize
+                        track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+                        setTimeout(() => {
+                            track.style.transition = 'transform 0.5s ease-in-out';
+                        }, 50);
+                    });
+                }
+            }
         });
     </script>
 </body>
