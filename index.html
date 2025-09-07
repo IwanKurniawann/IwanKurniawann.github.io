@@ -3,28 +3,12 @@
 <html lang="id-ID" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-
-    <!-- [REVISI KEAMANAN] Memperbarui Content Security Policy (CSP) -->
-    <!-- Aturan 'unsafe-inline' pada style-src ditambahkan agar Tailwind CDN dapat berfungsi. -->
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                   script-src 'self' https://unpkg.com https://cdn.tailwindcss.com; 
-                   style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-                   font-src https://fonts.gstatic.com; 
-                   img-src 'self' https://placehold.co https://iwankurniawann.github.io; 
-                   object-src 'none'; 
-                   base-uri 'self';
-                   form-action 'self';
-                   frame-ancestors 'none';">
     
-    <!-- [REVISI KEAMANAN] Menambahkan header keamanan lainnya via meta tag -->
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-
-    <!-- Meta tags SEO -->
+    <!-- [REVISI SEO] Meta tags dioptimalkan dengan konten Bahasa Indonesia untuk target audiens lokal -->
     <title>Iwan Kurniawan - Spesialis Kesehatan Lingkungan & Higiene Industri</title>
     <meta name="description" content="Website personal Iwan Kurniawan, seorang Spesialis Kesehatan Lingkungan & Higiene Industri yang memanfaatkan ilmu data untuk menciptakan lingkungan kerja yang lebih aman dan berkelanjutan.">
     
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags untuk Social Media Sharing -->
     <meta property="og:title" content="Iwan Kurniawan - Spesialis Kesehatan Lingkungan & Higiene Industri">
     <meta property="og:description" content="Website personal Iwan Kurniawan, seorang Spesialis Kesehatan Lingkungan & Higiene Industri yang memanfaatkan ilmu data untuk menciptakan lingkungan kerja yang lebih aman.">
     <meta property="og:image" content="https://iwankurniawann.github.io/Images/profile.png">
@@ -42,16 +26,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <!-- [PERBAIKAN] Mengganti 'xintegrity' menjadi 'integrity' yang benar -->
-    <script src="https://unpkg.com/lucide@latest" 
-            integrity="sha384-6gqKqfFv93ZCj3z3h0VqBC85yDI0hJjbu5103rHkuOU1CnsfAPWDwfX2B4okdiuM" 
-            crossorigin="anonymous"></script>
-
-    <!-- Menghubungkan ke file CSS eksternal -->
-    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* bg-slate-50 */
+        }
+        details > summary { list-style: none; cursor: pointer; transition: color 0.2s ease-in-out; }
+        details > summary::-webkit-details-marker { display: none; }
+        .chevron-icon { transition: transform 0.3s ease-in-out; }
+        details[open] .chevron-icon { transform: rotate(90deg); }
+        .nav-link.active { color: #2563eb; font-weight: 700; }
+        .section-fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .section-fade-in.visible { opacity: 1; transform: translateY(0); }
+        /* Style untuk transisi slider yang mulus */
+        .testimonial-slider-track {
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="text-slate-700">
 
+    <!-- [STRUKTUR SEMANTIK] Menggunakan tag <header> untuk bagian navigasi utama yang lebih semantik -->
     <header class="sticky top-0 z-50 transition-all duration-300" id="navbar-header">
         <nav id="navbar">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,6 +57,7 @@
                         <a href="#" class="font-extrabold text-xl text-slate-800">Iwan Kurniawan</a>
                     </div>
                     <div class="hidden md:block">
+                        <!-- [REVISI KONTEN] Menerjemahkan item navigasi ke Bahasa Indonesia -->
                         <div class="ml-10 flex items-baseline space-x-4">
                             <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Tentang Saya</a>
                             <a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Pengalaman</a>
@@ -67,7 +65,7 @@
                             <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Proyek</a>
                             <a href="#blog" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Blog</a>
                             <a href="#testimonials" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Testimoni</a>
-                            <a id="contact-button-nav" href="#" class="nav-link bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-all">Hubungi Saya</a>
+                            <a href="#contact" class="nav-link bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-all">Hubungi Saya</a>
                         </div>
                     </div>
                      <div class="md:hidden">
@@ -78,11 +76,13 @@
         </nav>
     </header>
 
+    <!-- [STRUKTUR SEMANTIK] Menggunakan <main> untuk konten utama halaman -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Hero Section -->
         <section id="hero" class="pt-24 md:pt-32">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div class="md:col-span-2">
+                    <!-- [REVISI AUDIT] Mengganti headline agar lebih berorientasi pada nilai dan langsung menunjukkan proposisi unik. -->
                     <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                         Menerjemahkan Data Lingkungan Kompleks Menjadi Keselamatan Kerja
                     </h1>
@@ -93,6 +93,7 @@
                         Saya memanfaatkan ilmu data untuk membangun tempat kerja yang lebih aman dan mendorong operasi industri yang berkelanjutan. Saya mengubah data lingkungan dan okupasi yang kompleks menjadi wawasan yang dapat ditindaklanjuti dan menyelamatkan jiwa.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-4 items-center">
+                        <!-- [REVISI AUDIT] Menambahkan tombol Unduh CV yang direkomendasikan untuk kemudahan rekruter. -->
                         <a href="#" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
                             Unduh CV Saya
                         </a>
@@ -102,6 +103,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center md:justify-end">
+                    <!-- [REVISI SEO] Atribut alt dibuat lebih deskriptif untuk aksesibilitas dan SEO gambar. -->
                     <img src="Images/profile.png" alt="Foto profil Iwan Kurniawan, Spesialis Kesehatan Lingkungan" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-lg border-4 border-white">
                 </div>
             </div>
@@ -115,6 +117,7 @@
                         <h2 id="about-heading" class="text-3xl font-bold text-slate-900">Tentang Saya</h2>
                         <div class="mt-2 w-16 h-1 bg-blue-600 rounded"></div>
                     </div>
+                    <!-- [REVISI AUDIT] Menulis ulang narasi untuk menyatukan persona praktisi lapangan dan analis data. -->
                     <div class="md:col-span-2 space-y-4 text-lg leading-relaxed">
                         <p>Data lingkungan dan K3 seringkali melimpah namun sulit diinterpretasikan. Saya menjembatani kesenjangan ini dengan menggabungkan keahlian pengambilan sampel di lapangan dengan analisis data modern untuk menghasilkan wawasan yang dapat ditindaklanjuti demi kepatuhan regulasi dan lingkungan kerja yang lebih aman.</p>
                         <p>Keahlian saya terletak pada penerapan metodologi sampling teknis yang presisi, memastikan pengumpulan data yang akurat, andal, dan dapat dipertanggungjawabkan secara hukum. Nilai inti yang saya tawarkan adalah kemampuan untuk menyintesis data lapangan dan analitis yang kompleks menjadi wawasan strategis.</p>
@@ -163,6 +166,8 @@
                             </ul>
                         </div>
                     </details>
+
+                    <!-- [REVISI AUDIT] Menghapus pengalaman kerja 'TukangSayur.ID' yang dinilai tidak relevan dengan narasi karier yang dituju. -->
                  </div>
             </section>
 
@@ -195,7 +200,9 @@
                 <div class="mt-2 w-16 h-1 bg-blue-600 rounded mx-auto"></div>
                 <p class="mt-4 max-w-2xl mx-auto text-center text-slate-600">Menampilkan proyek-proyek yang menyoroti keahlian saya dalam ilmu lingkungan, higiene industri, dan analisis data.</p>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- [STRUKTUR SEMANTIK] Menggunakan tag <article> untuk setiap item proyek yang mandiri. -->
                     <article class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden flex flex-col group">
+                        <!-- [REVISI AUDIT] Menambahkan gambar placeholder untuk memberikan bukti visual dan memperkuat klaim. -->
                         <img src="https://placehold.co/600x400/EBF4FF/3B82F6?text=Grafik+Tren" alt="Visualisasi data analisis kualitas udara" class="w-full h-48 object-cover">
                         <div class="p-6 flex-grow">
                              <h3 class="font-bold text-lg text-slate-800">Analisis Tren Kualitas Udara Berbasis Data</h3>
@@ -205,6 +212,7 @@
                                 <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
                              </div>
                         </div>
+                        <!-- [EDIT] Menambahkan footer studi kasus -->
                         <div class="p-4 bg-slate-50 text-slate-400 font-medium text-sm text-center">
                             Studi Kasus Segera Hadir
                         </div>
@@ -219,6 +227,7 @@
                                 <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Machine Learning</span>
                              </div>
                         </div>
+                        <!-- [EDIT] Menambahkan footer studi kasus -->
                         <div class="p-4 bg-slate-50 text-slate-400 font-medium text-sm text-center">
                             Studi Kasus Segera Hadir
                         </div>
@@ -233,6 +242,7 @@
                                  <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Risk Assessment</span>
                              </div>
                         </div>
+                        <!-- [EDIT] Menambahkan footer studi kasus -->
                         <div class="p-4 bg-slate-50 text-slate-400 font-medium text-sm text-center">
                             Studi Kasus Segera Hadir
                         </div>
@@ -240,11 +250,13 @@
                 </div>
             </section>
             
+            <!-- [FITUR BARU] Penambahan Section Blog sesuai permintaan. -->
             <section id="blog" class="py-12 section-fade-in" aria-labelledby="blog-heading">
                 <h2 id="blog-heading" class="text-3xl font-bold text-slate-900 text-center">Tulisan & Wawasan</h2>
                 <div class="mt-2 w-16 h-1 bg-blue-600 rounded mx-auto"></div>
                 <p class="mt-4 max-w-2xl mx-auto text-center text-slate-600">Berbagi pemikiran tentang persimpangan antara teknologi, data, dan kesehatan lingkungan kerja.</p>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post Card 1 -->
                     <article class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden flex flex-col group">
                         <a href="#" class="block">
                            <img src="https://placehold.co/600x400/FEF2F2/DC2626?text=Teknologi+IH" alt="Ilustrasi teknologi modern dalam higiene industri" class="w-full h-48 object-cover group-hover:opacity-90 transition-opacity">
@@ -257,6 +269,7 @@
                             </a>
                         </div>
                     </article>
+                    <!-- Blog Post Card 2 -->
                     <article class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden flex flex-col group">
                          <a href="#" class="block">
                            <img src="https://placehold.co/600x400/F0F9FF/0284C7?text=Python+untuk+Data" alt="Cuplikan kode Python untuk analisis data" class="w-full h-48 object-cover group-hover:opacity-90 transition-opacity">
@@ -269,6 +282,7 @@
                             </a>
                         </div>
                     </article>
+                    <!-- Blog Post Card 3 -->
                     <article class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden flex flex-col group">
                          <a href="#" class="block">
                            <img src="https://placehold.co/600x400/F5F3FF/8B5CF6?text=Regulasi+vs+Data" alt="Timbangan yang menyeimbangkan regulasi dan data" class="w-full h-48 object-cover group-hover:opacity-90 transition-opacity">
@@ -284,12 +298,17 @@
                 </div>
             </section>
 
+             <!-- Testimonials Section -->
              <section id="testimonials" class="py-12 section-fade-in" aria-labelledby="testimonials-heading">
                 <h2 id="testimonials-heading" class="text-3xl font-bold text-slate-900 text-center">Apa Kata Mereka</h2>
                 <div class="mt-2 w-16 h-1 bg-blue-600 rounded mx-auto"></div>
                 
+                <!-- Kontainer Testimoni Slider -->
                 <div class="relative w-full max-w-2xl mx-auto overflow-hidden mt-12">
+                    <!-- Track yang berisi semua kartu testimoni -->
                     <div id="testimonial-track" class="flex testimonial-slider-track">
+
+                        <!-- Testimoni 1 -->
                         <div class="w-full flex-shrink-0 px-2">
                             <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-8 md:p-10 h-full flex flex-col justify-center">
                                 <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
@@ -302,6 +321,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Testimoni 2 -->
                         <div class="w-full flex-shrink-0 px-2">
                              <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-8 md:p-10 h-full flex flex-col justify-center">
                                 <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
@@ -314,6 +335,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Testimoni 3 -->
                         <div class="w-full flex-shrink-0 px-2">
                              <div class="bg-white rounded-xl shadow-lg border border-slate-200 p-8 md:p-10 h-full flex flex-col justify-center">
                                 <i data-lucide="quote" class="w-12 h-12 text-blue-200 mx-auto"></i>
@@ -326,7 +349,10 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+                    <!-- Navigasi (Tombol panah) -->
                     <button id="prevBtn" class="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 bg-white/60 hover:bg-white p-2 rounded-full shadow-md hover:shadow-lg transition-all z-10">
                         <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
                     </button>
@@ -335,17 +361,18 @@
                     </button>
                 </div>
                 
+                <!-- Indikator (titik-titik) -->
                 <div id="dots-container" class="flex justify-center mt-8 space-x-2">
                     <!-- Dots akan dibuat oleh JavaScript -->
                 </div>
             </section>
 
-            <!-- Contact Section -->
+             <!-- Contact Section -->
             <section id="contact" class="py-16 md:py-24 text-center bg-slate-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 section-fade-in" aria-labelledby="contact-heading">
                 <h2 id="contact-heading" class="text-4xl font-extrabold text-slate-900">Mari Terhubung</h2>
                 <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Saya selalu terbuka untuk mendiskusikan peluang baru, kolaborasi, atau sekadar bertukar wawasan. Jangan ragu untuk menghubungi saya!</p>
                 <div class="mt-8">
-                     <a id="contact-button-main" href="#" class="inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                     <a href="mailto:iwankurniawans@outlook.com" class="inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
                         Hubungi Saya
                     </a>
                 </div>
@@ -356,7 +383,7 @@
                     <a href="https://github.com/IwanKurniawann" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-blue-600 transition-colors" aria-label="Profil GitHub Iwan Kurniawan">
                         <i data-lucide="github" class="w-8 h-8"></i>
                     </a>
-                    <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-blue-600 transition-colors" aria-label="Hubungi Iwan Kurniawan via WhatsApp">
+                    <a href="https://wa.me/+6282277984180" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-blue-600 transition-colors" aria-label="Hubungi Iwan Kurniawan via WhatsApp">
                          <i data-lucide="phone" class="w-8 h-8"></i>
                     </a>
                  </div>
@@ -368,7 +395,142 @@
         <p class="text-sm text-slate-500">&copy; 2025 Iwan Kurniawan. Hak Cipta Dilindungi.</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Perbaikan: Panggil lucide.createIcons() setelah DOM siap.
+            lucide.createIcons();
+
+            // --- Script untuk Navbar & Animasi Scroll ---
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/90', 'backdrop-blur-sm', 'shadow-md');
+                } else {
+                    navbar.classList.remove('bg-white/90', 'backdrop-blur-sm', 'shadow-md');
+                }
+            });
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const activateNavLink = () => {
+                let currentSection = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                // Tambahkan link testimoni ke navigasi aktif
+                if (!currentSection && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    currentSection = 'contact';
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', activateNavLink);
+            activateNavLink();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.section-fade-in').forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Script untuk Testimonial Slider ---
+            const track = document.getElementById('testimonial-track');
+            if (track) {
+                const slides = Array.from(track.children);
+                const nextButton = document.getElementById('nextBtn');
+                const prevButton = document.getElementById('prevBtn');
+                const dotsContainer = document.getElementById('dots-container');
+
+                if (slides.length > 0) {
+                    let slideWidth = slides[0].getBoundingClientRect().width;
+                
+                    // Buat dots navigasi
+                    slides.forEach((_, index) => {
+                        const button = document.createElement('button');
+                        button.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+                        button.classList.add('dot', 'w-3', 'h-3', 'bg-slate-300', 'rounded-full', 'transition-colors', 'duration-300');
+                        if (index === 0) {
+                            button.classList.remove('bg-slate-300');
+                            button.classList.add('bg-blue-600');
+                        }
+                        button.addEventListener('click', () => {
+                            moveToSlide(index);
+                            resetInterval();
+                        });
+                        dotsContainer.appendChild(button);
+                    });
+                    const dots = Array.from(dotsContainer.children);
+
+                    let currentIndex = 0;
+
+                    // Fungsi untuk pindah slide
+                    const moveToSlide = (targetIndex) => {
+                        track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+                        
+                        // Update dot yang aktif
+                        dots.forEach((dot, index) => {
+                            dot.classList.toggle('bg-blue-600', index === targetIndex);
+                            dot.classList.toggle('bg-slate-300', index !== targetIndex);
+                        });
+
+                        currentIndex = targetIndex;
+                        lucide.createIcons(); // Re-render icons if needed
+                    };
+                    
+                    // Event listener untuk tombol
+                    prevButton.addEventListener('click', e => {
+                        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        moveToSlide(prevIndex);
+                        resetInterval();
+                    });
+
+                    nextButton.addEventListener('click', e => {
+                        const nextIndex = (currentIndex + 1) % slides.length;
+                        moveToSlide(nextIndex);
+                        resetInterval();
+                    });
+
+                    // Sliding otomatis
+                    let slideInterval;
+                    const startInterval = () => {
+                        slideInterval = setInterval(() => {
+                            const nextIndex = (currentIndex + 1) % slides.length;
+                            moveToSlide(nextIndex);
+                        }, 7000); // Ganti slide setiap 5 detik
+                    };
+                    
+                    const resetInterval = () => {
+                        clearInterval(slideInterval);
+                        startInterval();
+                    };
+
+                    // Mulai slider otomatis
+                    startInterval();
+                    
+                    // Responsive: atur ulang lebar slide jika ukuran window berubah
+                    window.addEventListener('resize', () => {
+                        slideWidth = slides[0].getBoundingClientRect().width;
+                        track.style.transition = 'none'; // nonaktifkan transisi saat resize
+                        track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+                        setTimeout(() => {
+                            track.style.transition = 'transform 0.5s ease-in-out';
+                        }, 50);
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 
